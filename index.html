@@ -4,7 +4,102 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/c6752d6620.js"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="assets/css/style.css" />
         <title>Trello replica</title>
     </head>
-    <body></body>
+    <body>
+        <div class="container">
+            <div class="head"><h1>Trello Replica</h1></div>
+            <div class="board">
+                <div class="list">
+                    <div class="list-head">
+                        <h2>Backlog</h2>
+                    </div>
+                    <div class="list-items" list-index="0">
+                        <div class="list-item" draggable="true">
+                            <p>Release the course</p>
+                        </div>
+                        <div class="list-item" draggable="true">
+                            <p>Sit back and relax</p>
+                        </div>
+                    </div>
+                    <div class="add-items">
+                        <div class="add-item-label">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <input type="text" class="add-item-input" />
+                        <button type="button" class="add-item-btn">Save</button>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-head">
+                        <h2>In Progress</h2>
+                    </div>
+                    <div class="list-items" list-index="1">
+                        <div class="list-item" draggable="true">
+                            <p>Work on projects</p>
+                        </div>
+                        <div class="list-item" draggable="true">
+                            <p>Listen to music</p>
+                        </div>
+                    </div>
+                    <div class="add-items">
+                        <div class="add-item-label">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <input type="text" class="add-item-input" />
+                        <button type="button" class="add-item-btn">Save</button>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-head">
+                        <h2>Complete</h2>
+                    </div>
+                    <div class="list-items" list-index="2">
+                        <div class="list-item" draggable="true">
+                            <p>Being cool</p>
+                        </div>
+                        <div class="list-item" draggable="true">
+                            <p>Getting stuff done</p>
+                        </div>
+                    </div>
+                    <div class="add-items">
+                        <div class="add-item-label">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <input type="text" class="add-item-input" />
+                        <button type="button" class="add-item-btn">Save</button>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-head">
+                        <h2>On hold</h2>
+                    </div>
+                    <div class="list-items" list-index="3">
+                        <div class="list-item" draggable="true">
+                            <p>Being uncool</p>
+                        </div>
+                    </div>
+                    <div class="add-items">
+                        <div class="add-item-label">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <input type="text" class="add-item-input" />
+                        <button type="button" class="add-item-btn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/script.js"></script>
+    </body>
 </html>
