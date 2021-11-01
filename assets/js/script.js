@@ -2,6 +2,7 @@ var telloReplica = (function () {
     const list = document.querySelectorAll('.list-items');
     let dragListStartIndex;
     let current;
+    let listArr = [];
     function addEventListeners () {
         const listItems = document.querySelectorAll('.list-item');
         const showAddInput = document.querySelectorAll('.add-item-label');
@@ -47,6 +48,7 @@ var telloReplica = (function () {
         const draggable = current;
         list[toIndex].appendChild(draggable);
         const items = list[toIndex].querySelectorAll('.list-item');
+        saveData ();
     }
 
     function itemDragDrop(e) {
@@ -78,6 +80,7 @@ var telloReplica = (function () {
                     parent.insertBefore(current, elm)
                 }
             }
+            saveData ();
         }
     }
 
@@ -101,10 +104,55 @@ var telloReplica = (function () {
             input.classList.toggle('active');
             input.value = null;
             this.classList.toggle('active');
+            saveData ();
         }
         addEventListeners();
     }
 
     addEventListeners();
 
+    function saveData () {
+        listArr = [];
+        for (let i=0; i<list.length; i++) {
+            let arr = []
+            listArr.push(arr)
+        }
+        for(let i=0; i < listArr.length; i++) {
+            let listItems = list[i].querySelectorAll('p');
+            listItems.forEach((item, index) => {
+                let text = item.innerText;
+                listArr[i].push(text);
+            })
+        }
+        sessionStorage.setItem('data', JSON.stringify(listArr));
+    }
+
+    function loadData () {
+        let savedData = JSON.parse(sessionStorage.getItem('data'));
+        if (savedData) {
+            for(let i=0; i < list.length; i++) {
+                let items = list[i].querySelectorAll('.list-item');
+                items.forEach(item => {
+                    item.remove();
+                })
+            }
+
+            for(let i = 0; i < savedData.length; i++) {
+                for(let j = 0; j < savedData[i].length; j++) {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.classList.add('list-item');
+                    itemDiv.setAttribute('draggable', 'true');
+                    itemDiv.innerHTML= `<p>${savedData[i][j]}</p>`
+                    list[i].appendChild(itemDiv);
+                }
+            }
+            addEventListeners();
+        }
+    }
+
+    return {loadData}
 })();
+
+window.onload = function () {
+    telloReplica.loadData();
+}
