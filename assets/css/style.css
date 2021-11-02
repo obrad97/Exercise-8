@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: url('/assets/images/background.jpg') no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 20px 0 0 0 ;
+}
+
+.head {
+    height: 10%;
+}
+
+.head h1 {
+    text-align: center;
+    color: #024B87;
+}
+
+.board {
+    min-width: 100%;
+    height: 90%;
+    overflow-x: scroll;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.list {
+    width: 275px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+    background-color: rgba(235, 236, 240, 0.5);
+    margin-left: 10px;
+    white-space: nowrap;
+    border-radius: 3px;
+}
+
+.list-head {
+    background: #024B87;
+    color: #ebecf0 ;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    padding: 6px;
+}
+
+.list-items {
+    padding: 10px 0;
+}
+
+.list-item {
+    background: #ebecf0;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    text-align: left;
+    padding: 5px;
+}
+
+.add-items {
+    text-align: left;
+}
+
+.add-items .active {
+    display: block;
+}
+
+.add-item-label {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.add-item-label:hover {
+    color: #ebecf0;
+}
+
+.fas {
+    font-size: 15px;
+}
+
+.fas::after {
+    display: inline-block;
+    vertical-align: top;
+    content: "Add item";
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    margin-left: 6px;
+}
+
+.add-item-input {
+    display: none;
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 3px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.add-item-btn {
+    display: none;
+    cursor: pointer;
+    background: #024B87;
+    border-radius: 3px;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #ebecf0;
+}
+
+.add-item-btn:hover {
+    background: #035F98;
+}
+
